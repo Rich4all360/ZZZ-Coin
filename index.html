@@ -1,6 +1,116 @@
 <!DOCTYPE html>
 <html lang="it">
 <head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>ZZZ Coin</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 20px;
+      background: #2d2d2d;
+      color: #fff;
+      font-family: Arial, sans-serif;
+      text-align: center;
+      min-height: 100vh;
+    }
+    h1 {
+      font-size: 48px;
+      font-weight: bold;
+      color: #b3d9ff;
+    }
+    p {
+      font-size: 20px;
+      font-style: italic;
+      margin-bottom: 30px;
+      color: #a3c1ff;
+    }
+    .box {
+      background: #333;
+      padding: 20px;
+      margin: 0 auto;
+      max-width: 500px;
+      box-shadow: 0 0 20px rgba(0,0,0,0.1);
+      border-radius: 10px;
+    }
+    code {
+      color: #f5a623;
+      font-size: 14px;
+    }
+    button {
+      margin: 10px 0;
+      padding: 10px;
+      width: 100%;
+      border: none;
+      border-radius: 5px;
+      font-size: 16px;
+      cursor: pointer;
+    }
+    .connect {
+      background: #444;
+      color: white;
+    }
+    .buy {
+      background-color: #22c55e;
+      color: white;
+    }
+    .footer {
+      margin-top: 40px;
+      color: #a3c1ff;
+    }
+    img {
+      margin-top: 40px;
+      width: 150px;
+      height: 150px;
+      border-radius: 50%;
+    }
+  </style>
+</head>
+<body>
+  <h1>ZZZ Coin</h1>
+  <p>La crypto per chi è sempre stanco.</p>
+
+  <div class="box">
+    <p><strong>Token Address:</strong></p>
+    <code>0x50f8160aeb9ce8032DC2AB97677a7c078328Db0B</code>
+
+    <div>
+      <button class="connect" onclick="connectWallet()">Connect Wallet</button>
+      <button class="buy" onclick="buyZZZ()">Buy ZZZ on QuickSwap</button>
+    </div>
+  </div>
+
+  <div class="footer">
+    <p>1,000,000,000,000 ZZZ minted. Super rare (non davvero). Prezzo bassissimo. Meme fortissimo.</p>
+    <p>Holda, sogna, dormi. Forse un giorno ti svegli ricco.</p>
+  </div>
+
+  <img src="https://files.oaiusercontent.com/file-75a2ddc5-4e37-4a8a-961c-9c96d2e0988d/zzz_logo_cartoon.png" alt="ZZZ Coin Logo" />
+
+  <script>
+    async function connectWallet() {
+      if (window.ethereum) {
+        try {
+          const accounts = await window.ethereum.request({ method: "eth_requestAccounts" });
+          const walletBtn = document.querySelector('.connect');
+          walletBtn.textContent = "Wallet: " + accounts[0].slice(0, 6) + "..." + accounts[0].slice(-4);
+        } catch (error) {
+          alert("Errore durante la connessione al wallet.");
+        }
+      } else {
+        alert("Installa MetaMask per connettere il wallet.");
+      }
+    }
+
+    function buyZZZ() {
+      const url = "https://quickswap.exchange/#/swap?outputCurrency=0x50f8160aeb9ce8032DC2AB97677a7c078328Db0B&chain=polygon";
+      window.open(url, "_blank");
+    }
+  </script>
+</body>
+</html><!DOCTYPE html>
+<html lang="it">
+<head>
 <meta charset="UTF-8">
 <meta name="viewport"content="width=device-width,initial-scale=1.0">
 <title>LA CRIPTOVALUTA DEL FUTURO</title>
