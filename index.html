@@ -3,148 +3,201 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>ZZZ Coin</title>
+  <title>ZZZ Coin - Dormi e Guadagna</title>
   <style>
     body {
       margin: 0;
-      padding: 20px;
       background: #2d2d2d;
       color: #fff;
-      font-family: Arial, sans-serif;
+      font-family: 'Arial', sans-serif;
       text-align: center;
-      min-height: 100vh;
+    }
+    header {
+      width: 100%;
+      background: #1f1f1f;
+      padding: 10px;
+    }
+    header img {
+      max-width: 100%;
+      height: auto;
+      border-bottom: 2px solid #444;
+      border-radius: 10px;
+    }
+    .content {
+      padding: 30px;
     }
     h1 {
-      font-size: 48px;
-      font-weight: bold;
+      font-size: 40px;
       color: #b3d9ff;
     }
     p {
       font-size: 20px;
-      font-style: italic;
-      margin-bottom: 30px;
+      margin-bottom: 20px;
       color: #a3c1ff;
     }
-    .box {
+    .counter-box {
       background: #333;
+      margin: 20px auto;
       padding: 20px;
-      margin: 0 auto;
       max-width: 500px;
-      box-shadow: 0 0 20px rgba(0,0,0,0.1);
-      border-radius: 10px;
+      border-radius: 12px;
+      box-shadow: 0 0 20px rgba(0,0,0,0.3);
     }
-    code {
-      color: #f5a623;
-      font-size: 14px;
+    .counter-title {
+      font-size: 24px;
+      margin-bottom: 10px;
+    }
+    .counter-value {
+      font-size: 32px;
+      font-weight: bold;
+      color: #22c55e;
     }
     button {
-      margin: 10px 0;
-      padding: 10px;
-      width: 100%;
+      padding: 12px 24px;
+      margin: 15px 5px;
+      font-size: 18px;
+      border-radius: 8px;
       border: none;
-      border-radius: 5px;
-      font-size: 16px;
       cursor: pointer;
+      transition: background 0.3s;
     }
     .connect {
       background: #444;
       color: white;
     }
+    .connect:hover {
+      background: #555;
+    }
     .buy {
       background-color: #22c55e;
       color: white;
     }
-    .footer {
-      margin-top: 40px;
-      color: #a3c1ff;
+    .buy:hover {
+      background-color: #16a34a;
     }
-    .logo {
+    .donate {
+      background-color: #f59e0b;
+      color: white;
+    }
+    .donate:hover {
+      background-color: #d97706;
+    }
+    footer {
       margin-top: 40px;
+      font-size: 14px;
+      color: #888;
+    }
+    input[type="number"] {
+      padding: 10px;
       width: 150px;
-      height: 150px;
-      border-radius: 50%;
-    }
-    .image-box {
-      width: 250px;
-      background: #2a2a2a;
-      padding: 15px;
-      border-radius: 10px;
-    }
-    .image-box img {
-      width: 100%;
-      border-radius: 8px;
+      border-radius: 5px;
+      border: none;
+      margin-right: 10px;
     }
   </style>
 </head>
+
 <body>
-  <h1>ZZZ Coin</h1>
-  <p>La crypto per chi è sempre stanco.</p>
 
-  <div class="box">
-    <p><strong>Token Address:</strong></p>
-    <code>0x50f8160aeb9ce8032DC2AB97677a7c078328Db0B</code>
+<header>
+  <img src="https://i.imgur.com/1fHYCrn.png" alt="Astronauta dorme - To the ZZZ!">
+</header>
 
-    <div>
-      <button class="connect" onclick="connectWallet()">Connect Wallet</button>
-      <button class="buy" onclick="buyZZZ()">Buy ZZZ on QuickSwap</button>
-    </div>
+<div class="content">
+
+  <h1>Benvenuto su ZZZ Coin</h1>
+  <p>La crypto ufficiale di chi preferisce sognare invece di lavorare.</p>
+
+  <div class="counter-box">
+    <div class="counter-title">Visite Totali</div>
+    <div class="counter-value" id="visitCounter">0</div>
   </div>
 
-  <div class="footer">
-    <p>1,000,000,000,000 ZZZ minted. Super rare (non davvero). Prezzo bassissimo. Meme fortissimo.</p>
-    <p>Holda, sogna, dormi. Forse un giorno ti svegli ricco.</p>
+  <div class="counter-box">
+    <div class="counter-title">ZZZ Venduti</div>
+    <div class="counter-value" id="zzzCounter">0</div>
   </div>
 
-  <!-- Logo personalizzato -->
-  <img class="logo" src="https://i.imgur.com/9ujfOsa.png" alt="ZZZ Coin Logo" />
+  <button class="connect" onclick="connectWallet()">Connetti Wallet</button>
+  <button class="buy" onclick="buyZZZ()">Compra ZZZ su QuickSwap</button>
 
-  <!-- Sezione immagini divertenti -->
-  <div style="margin-top: 60px; padding: 20px; background: #1f1f1f; border-radius: 10px;">
-    <h2 style="color: #ffcc00; font-size: 32px;">Perché scegliere ZZZ Coin?</h2>
-    <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 20px; margin-top: 20px;">
-
-      <div class="image-box">
-        <img src="https://i.imgur.com/LkJmV4s.png" alt="Sbadiglio" />
-        <p style="margin-top: 10px;">Anche il logo ha sonno. Non c’è fretta.</p>
-      </div>
-
-      <div class="image-box">
-        <img src="https://i.imgur.com/tA7EohF.png" alt="Pigro sul divano" />
-        <p style="margin-top: 10px;">Investi dormendo. La pigrizia è potere.</p>
-      </div>
-
-      <div class="image-box">
-        <img src="https://i.imgur.com/Oo0i6Xu.png" alt="Lazy genius" />
-        <p style="margin-top: 10px;">Solo i veri pigri capiranno il potenziale.</p>
-      </div>
-
-      <div class="image-box">
-        <img src="https://i.imgur.com/4ql3oZo.png" alt="Tappeto volante" />
-        <p style="margin-top: 10px;">Voliamo verso la luna. Forse.</p>
-      </div>
-
-    </div>
+  <div style="margin-top: 30px;">
+    <input type="number" id="maticAmount" min="0.001" step="0.001" value="0.01" placeholder="MATIC da donare">
+    <button class="donate" onclick="donateMatic()">Dona MATIC</button>
   </div>
 
-  <script>
-    async function connectWallet() {
-      if (window.ethereum) {
-        try {
-          const accounts = await window.ethereum.request({ method: "eth_requestAccounts" });
-          const walletBtn = document.querySelector('.connect');
-          walletBtn.textContent = "Wallet: " + accounts[0].slice(0, 6) + "..." + accounts[0].slice(-4);
-        } catch (error) {
-          alert("Errore durante la connessione al wallet.");
-        }
-      } else {
-        alert("Installa MetaMask per connettere il wallet.");
+  <div id="thankYouMessage" style="margin-top: 20px; font-size: 18px; color: #22c55e;"></div>
+
+</div>
+
+<footer>
+  <p>© 2025 ZZZ Coin. Dormi sereno, sogna ricco.</p>
+</footer>
+
+<script>
+  // Conteggio visitatori
+  if (localStorage.getItem('visitCounter')) {
+    let count = parseInt(localStorage.getItem('visitCounter'));
+    count++;
+    localStorage.setItem('visitCounter', count);
+    document.getElementById('visitCounter').innerText = count;
+  } else {
+    localStorage.setItem('visitCounter', 1);
+    document.getElementById('visitCounter').innerText = 1;
+  }
+
+  // Simulazione vendite
+  let startZZZ = 50000000000;
+  function updateZZZCounter() {
+    startZZZ += Math.floor(Math.random() * 10000);
+    document.getElementById('zzzCounter').innerText = startZZZ.toLocaleString();
+  }
+  setInterval(updateZZZCounter, 5000);
+
+  async function connectWallet() {
+    if (window.ethereum) {
+      try {
+        const accounts = await window.ethereum.request({ method: "eth_requestAccounts" });
+        const walletBtn = document.querySelector('.connect');
+        walletBtn.textContent = "Wallet: " + accounts[0].slice(0, 6) + "..." + accounts[0].slice(-4);
+      } catch (error) {
+        alert("Errore durante la connessione al wallet.");
       }
+    } else {
+      alert("Installa MetaMask per connettere il wallet.");
     }
+  }
 
-    function buyZZZ() {
-      const url = "https://quickswap.exchange/#/swap?outputCurrency=0x50f8160aeb9ce8032DC2AB97677a7c078328Db0B&chain=polygon";
-      window.open(url, "_blank");
+  function buyZZZ() {
+    const url = "https://quickswap.exchange/#/swap?outputCurrency=0x50f8160aeb9ce8032DC2AB97677a7c078328Db0B&chain=polygon";
+    window.open(url, "_blank");
+  }
+
+  async function donateMatic() {
+    const recipient = "0xC81A16a855b6A3f26aCA273cDd4C57C68eC840d4"; // tuo wallet
+    const amountInEth = document.getElementById('maticAmount').value;
+
+    if (window.ethereum && amountInEth > 0) {
+      const provider = new ethers.providers.Web3Provider(window.ethereum);
+      const signer = provider.getSigner();
+      const tx = {
+        to: recipient,
+        value: ethers.utils.parseEther(amountInEth)
+      };
+      try {
+        await signer.sendTransaction(tx);
+        document.getElementById('thankYouMessage').innerText = `Grazie per la donazione di ${amountInEth} MATIC!`;
+      } catch (err) {
+        alert("Transazione annullata o fallita.");
+      }
+    } else {
+      alert("Importo non valido o wallet non disponibile.");
     }
-  </script>
+  }
+</script>
+
+<!-- Ethers.js CDN -->
+<script src="https://cdn.jsdelivr.net/npm/ethers@5.7.2/dist/ethers.min.js"></script>
+
 </body>
 </html>
