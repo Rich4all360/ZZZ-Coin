@@ -4,65 +4,85 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>ZZZ Coin - Dormi e Vinci!</title>
+
+  <!-- Favicon: Luna con ZZZ -->
+  <link rel="icon" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAA..." type="image/png">
+
   <style>
     body {
-      background-color: #121212;
-      color: #f5f5f5;
-      font-family: 'Comic Sans MS', cursive, sans-serif;
-      text-align: center;
       margin: 0;
       padding: 0;
+      background: linear-gradient(to bottom, #0f2027, #203a43, #2c5364);
+      font-family: 'Comic Neue', cursive, sans-serif;
+      color: white;
+      text-align: center;
+      background-attachment: fixed;
+      background-size: cover;
+      min-height: 100vh;
     }
     header {
-      padding: 30px 20px;
+      padding: 40px 20px 10px;
+      background-color: rgba(0, 0, 0, 0.5);
+      border-bottom: 2px solid #444;
     }
     h1 {
       font-size: 3em;
       margin-bottom: 10px;
+      animation: float 3s ease-in-out infinite;
     }
-    p {
-      font-size: 1.2em;
-      margin: 10px 0;
+    @keyframes float {
+      0%, 100% { transform: translateY(0px); }
+      50% { transform: translateY(-10px); }
+    }
+    .slogan {
+      font-size: 1.5em;
+      color: #ccc;
+      margin-bottom: 20px;
+      font-style: italic;
     }
     .counter {
       font-size: 2em;
-      margin: 20px 0;
+      margin: 30px 0;
     }
     .connect-button {
-      background-color: #4CAF50;
-      color: white;
-      padding: 15px 30px;
-      margin: 20px 0;
-      font-size: 1.5em;
+      background-color: #00c3ff;
       border: none;
-      border-radius: 15px;
+      color: white;
+      padding: 15px 40px;
+      font-size: 1.5em;
+      border-radius: 30px;
       cursor: pointer;
+      transition: background 0.3s;
+      margin-bottom: 30px;
     }
     .connect-button:hover {
-      background-color: #45a049;
+      background-color: #009ac6;
     }
     .memes {
-      margin-top: 30px;
+      margin: 30px 0;
     }
     .memes img {
-      width: 300px;
+      width: 250px;
       margin: 15px;
-      border-radius: 15px;
-      box-shadow: 0 0 15px rgba(255,255,255,0.2);
+      border-radius: 20px;
+      box-shadow: 0 0 15px rgba(255,255,255,0.3);
+      animation: float 4s ease-in-out infinite;
     }
     footer {
-      margin-top: 40px;
+      margin-top: 50px;
       padding: 20px;
       font-size: 0.9em;
-      color: #888;
+      color: #aaa;
+      background-color: rgba(0, 0, 0, 0.4);
     }
   </style>
 </head>
+
 <body>
 
 <header>
   <h1>ZZZ Coin</h1>
-  <p>La criptovaluta dei veri dormiglioni!</p>
+  <div class="slogan">La prima crypto che ti premia mentre dormi!</div>
 </header>
 
 <div class="counter">
@@ -73,7 +93,14 @@
 <button class="connect-button" onclick="connectWallet()">Connetti Wallet</button>
 
 <div class="memes">
-  <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAOEAAADhCAYAAAA7QCErAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAB3RJTUUH5AUXFSg7fCrqewAAA...TANTISSIMO BASE64...">
+  <!-- Astronauta che dorme -->
+  <img src="https://i.imgur.com/8E2iKro.png" alt="Astronauta dorme">
+  
+  <!-- Gatto pigro che dorme -->
+  <img src="https://i.imgur.com/WX1Yy1I.png" alt="Gatto dorme">
+
+  <!-- Sveglia distrutta -->
+  <img src="https://i.imgur.com/4DOwKXy.png" alt="Sveglia rotta">
 </div>
 
 <footer>
@@ -86,14 +113,14 @@
   setInterval(() => {
     visitCounter++;
     document.getElementById('visitCounter').innerText = visitCounter;
-  }, 5000); // ogni 5 secondi
+  }, 4000);
   
   // Simula aumento token venduti
   let tokenCounter = 100000;
   setInterval(() => {
-    tokenCounter += Math.floor(Math.random() * 3); // +0, +1 o +2 token venduti random
+    tokenCounter += Math.floor(Math.random() * 5);
     document.getElementById('tokenCounter').innerText = tokenCounter;
-  }, 7000); // ogni 7 secondi
+  }, 6000);
 
   // Connessione a Metamask
   async function connectWallet() {
